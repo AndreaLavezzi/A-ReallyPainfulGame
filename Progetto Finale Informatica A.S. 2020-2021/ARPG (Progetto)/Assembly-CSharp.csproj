@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C05C70EB-FB91-4565-1AB8-DD0E1B6E66B9}</ProjectGuid>
+    <ProjectGuid>{90001CBC-EE33-D060-A91C-202EC9C16CFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -84,9 +84,15 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\GamemodeSelection.cs" />
+    <Compile Include="Assets\Fade\Scripts\FadeManagerTest.cs" />
+    <Compile Include="Assets\Fade\Scripts\FadeManager.cs" />
+    <Compile Include="Assets\Scripts\CharacterSelectController.cs" />
+    <Compile Include="Assets\AudioManager\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\AudioManager\Scripts\AudioManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

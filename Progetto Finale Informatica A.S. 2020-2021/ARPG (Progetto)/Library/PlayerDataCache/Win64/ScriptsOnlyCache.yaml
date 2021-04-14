@@ -1,9 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - CharacterSelectController
+    - GamemodeSelection
     - MainMenu
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -39,6 +43,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
@@ -46,6 +52,10 @@ ScriptsOnlyBuild:
     - Class: 49
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -77,6 +87,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4370}
     - Class: 114
       Script: {instanceID: 4776}
+    - Class: 114
+      Script: {instanceID: 20908}
+    - Class: 114
+      Script: {instanceID: 22418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -100,15 +114,49 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1510}
+    - Class: 114
+      Script: {instanceID: 1790}
+    - Class: 114
+      Script: {instanceID: 2456}
+    - Class: 114
+      Script: {instanceID: 2588}
+    - Class: 114
+      Script: {instanceID: 2638}
+    - Class: 114
+      Script: {instanceID: 2768}
+    - Class: 114
+      Script: {instanceID: 2958}
+    - Class: 114
+      Script: {instanceID: 3064}
+    - Class: 114
+      Script: {instanceID: 3980}
+    - Class: 115
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -821,7 +869,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 549a5433aa9d3e8f493e6761bd1abd60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -849,9 +897,45 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
+  - hash:
+      serializedVersion: 2
+      Hash: 863f509bde414dd75a4d7eae4a0529e9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GamemodeSelection
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FadeManagerTest
+  - hash:
+      serializedVersion: 2
+      Hash: 0f9ea9d9d933b57a61193bf59d1a5182
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FadeManager
+  - hash:
+      serializedVersion: 2
+      Hash: 76d18f09b1a93007277374559b31b3a9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharacterSelectController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
+  - hash:
+      serializedVersion: 2
+      Hash: 7e1aa82d12e0e03e25bdb0d59cba966c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManagerTest
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SelectGamemode.unity
-  playerPath: C:/Users/HP/Documents/Progetto Finale Informatica A.S. 2020-2021/RPG-Like
-    School Final Project.exe
+  playerPath: C:/Users/HP/Documents/GitHub/A-ReallyPainfulGame/Progetto Finale Informatica
+    A.S. 2020-2021/Gioco/Latest/RPG-Like School Final Project.exe
