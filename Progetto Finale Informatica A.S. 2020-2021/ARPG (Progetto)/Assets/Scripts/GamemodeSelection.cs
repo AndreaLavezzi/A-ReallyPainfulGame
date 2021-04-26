@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GamemodeSelection : MonoBehaviour
 {
-    private int selectedGamemodeIndex;
+    public int selectedGamemodeIndex;
     
     [Header("List of gamemodes")]
     [SerializeField] private List<GamemodeSelectObject> gamemodeList = new List<GamemodeSelectObject>();
@@ -17,6 +18,17 @@ public class GamemodeSelection : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] private AudioClip arrowClickSFX;
+
+    public UnityEvent ValidChoice;
+
+    [System.Serializable]
+    public class BoolEvent : UnityEvent<bool> { }
+
+    private void Awake()
+    {
+        if (ValidChoice == null)
+            ValidChoice = new UnityEvent();
+    }
 
     private void Start()
     {
@@ -48,7 +60,14 @@ public class GamemodeSelection : MonoBehaviour
 
     public void Confirm()
     {
-        Debug.Log(string.Format($"E' stata scelta la modalità {gamemodeList[selectedGamemodeIndex].gamemodeName}"));
+        if(selectedGamemodeIndex == 1)
+        {
+            Debug.Log("La modalità selezionata non è ancora stata implementata.");
+        }
+        else
+        {
+            ValidChoice.Invoke();
+        }
     }
 
     private void UpdateGamemodeSelectionUI()

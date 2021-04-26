@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelectController : MonoBehaviour
 {
@@ -62,7 +63,14 @@ public class CharacterSelectController : MonoBehaviour
     }
     public void ConfirmSelection()
     {
-        Debug.Log(string.Format($"E' stato scelto il personaggio {characterList[selectedCharacterIndex].characterName}"));
+        if (selectedCharacterIndex == 1 || selectedCharacterIndex == 2)
+        {
+            Debug.Log("Il personaggio selezionato non è ancora stato implementato.");
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     [System.Serializable]
