@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCombat : MonoBehaviour
 {
+    #region Public Variables
     public Animator playerAnimator;
     public Animator healthBarAnimator;
 
@@ -17,7 +19,12 @@ public class PlayerCombat : MonoBehaviour
     public float nextAttackTime = 0f;
 
     public int maxHealth = 20;
+    #endregion
+
+    #region Private Variables
     private int currentHealth;
+    CharacterController2D characterController2D;
+    #endregion
 
     void Start()
     {
@@ -31,44 +38,57 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                Attack();
+                playerAnimator.SetTrigger("Attack");
+                //Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Z))
         {
             TakeDamage(1);
         }
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyUp(KeyCode.X))
         {
             TakeDamage(5);
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.C))
         {
             TakeDamage(-1);
         }
-        if (Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.V))
         {
             TakeDamage(-5);
         }
     }
 
     // Riproduce un'animazione d'attacco, individua i nemici nel suo raggio e applica loro del danno
-    void Attack()
+    public void Attack()
     {
-        playerAnimator.SetTrigger("Attack");
+        //playerAnimator.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in hitEnemies)
+        Debug.Log(hitEnemies);
+        foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            enemy.GetComponentInParent<Enemy>().TakeDamage(attackDamage);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        healthBarAnimator.SetInteger("Health", currentHealth);
+        healthBarAnimator.SetTrigger("HealthChange");
     }
 
     void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if (attackPoint == null)
         {
             return;
         }
@@ -76,14 +96,4 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        if (currentHealth < 0)
-        {
-            currentHealth = maxHealth;
-        }
-        healthBarAnimator.SetInteger("Health", currentHealth);
-        healthBarAnimator.SetTrigger("HealthChange");
-    }
 }

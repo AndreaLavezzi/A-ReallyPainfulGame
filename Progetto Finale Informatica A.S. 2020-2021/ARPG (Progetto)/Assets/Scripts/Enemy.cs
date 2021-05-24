@@ -1,50 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    InfiniteModeController infiniteModeController;
     public Animator animator;
-
-    public int maxHealth = 100;
-    private int currentHealth;
+    public GameObject healthBarPrefab;
+    public float maxHealth = 100;
+    public float currentHealth;
+    public float destructionTime = 15;
+    private bool isDead = false;
+    GameObject childHealthBar;
+    Image healthBarFill;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        infiniteModeController = GetComponent<InfiniteModeController>();
+        childHealthBar = Instantiate(healthBarPrefab, gameObject.transform) as GameObject;
+        childHealthBar.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, -6f);
+        childHealthBar.SetActive(false);
+        healthBarFill = childHealthBar.GetComponentInChildren<Image>();
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if(currentHealth == maxHealth)
+        {
+            childHealthBar.SetActive(true);
+        }
 
-        animator.SetTrigger("Hurt");
+        currentHealth -= damage;
+        healthBarFill.fillAmount = currentHealth / maxHealth;
+        if (animator != null)
+        {
+            animator.SetTrigger("Hurt");
+        }
 
         if(currentHealth <= 0)
         {
+            childHealthBar.SetActive(false);
             Die();
         }
     }
 
-    void Die()
+    public void Die()
     {
-        Debug.Log("Il nemico è stato sconfitto.");
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        if(isDead == false)
+        {
+            isDead = true;
+            Debug.Log("Il nemico è stato sconfitto.");
+            //GameObject.Find("InfiniteModeControllerOBJ").GetComponent<InfiniteModeController>().killedEnemies++;
+            //GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
-        animator.SetBool("IsDead", true);
+            float animDuration = 0;
+            if (animator != null)
+            {
+                animator.SetBool("IsDead", true);
+                animDuration = animator.GetCurrentAnimatorStateInfo(0).length;
+            }
 
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<CircleCollider2D>().enabled = false;
-        this.enabled = false;
-        Invoke("SpriteDisable", 15);
+            //GetComponentInChildren<Collider2D>().enabled = false;
+            //GetComponentInChildren<CircleCollider2D>().enabled = false;
+            //this.enabled = false;
+            Invoke("Destroy", destructionTime + Convert.ToInt32(animDuration));
+        }
+        
     }
 
-    void SpriteDisable()
+    public void Destroy()
     {
-        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(transform.root.GetComponentInParent<Enemy>().gameObject);
     }
+
+    
     
 }

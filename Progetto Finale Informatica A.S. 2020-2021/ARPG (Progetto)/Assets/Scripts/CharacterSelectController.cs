@@ -8,6 +8,7 @@ public class CharacterSelectController : MonoBehaviour
 {
     private int selectedCharacterIndex;
     private Color desiredColor;
+    public GameObject gamemodeSelection;
 
     [Header("List of characters")]
     [SerializeField] private List<CharacterSelectObject> characterList = new List<CharacterSelectObject>();
@@ -69,7 +70,7 @@ public class CharacterSelectController : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(gamemodeSelection.GetComponent<GamemodeSelection>().selectedGamemodeIndex + 1);
         }
     }
 

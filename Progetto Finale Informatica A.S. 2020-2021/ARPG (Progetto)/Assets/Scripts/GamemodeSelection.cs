@@ -60,14 +60,7 @@ public class GamemodeSelection : MonoBehaviour
 
     public void Confirm()
     {
-        if(selectedGamemodeIndex == 1)
-        {
-            Debug.Log("La modalità selezionata non è ancora stata implementata.");
-        }
-        else
-        {
-            ValidChoice.Invoke();
-        }
+        ValidChoice.Invoke();
     }
 
     private void UpdateGamemodeSelectionUI()
