@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 5963617160029832274}
   - component: {fileID: 5963617160029832273}
   - component: {fileID: 5963617160029832272}
+  - component: {fileID: 587724945}
   m_Layer: 6
   m_Name: ColossalCore
   m_TagString: Enemy
@@ -233,3 +234,15 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   destructionTime: 0
+--- !u!114 &587724945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963617160029832275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33e63083bd9f524ca7767fccf6e93c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -402,4 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4883202883322197488}
+  healthBarPrefab: {fileID: 3118527404259046875, guid: 706ed0a7531896c41ae1e5c629c981e1,
+    type: 3}
   maxHealth: 100
+  currentHealth: 0
+  destructionTime: 15

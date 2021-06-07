@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CanyonColossus.unity
     guid: b019ed7136c304c4ca4b17fcfea8e3f6
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: 0870185941016ba4594bbd9a5cf5c02b
   m_configObjects: {}

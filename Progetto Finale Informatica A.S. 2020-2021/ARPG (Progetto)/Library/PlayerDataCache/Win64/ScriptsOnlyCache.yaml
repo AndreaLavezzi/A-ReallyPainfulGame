@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - CanyonColossusController
     - CharacterController2D
     - CharacterSelectController
+    - ColossalCoreController
     - Enemy
     - EnemyBehaviour
     - Explosion
@@ -11,11 +12,13 @@ ScriptsOnlyBuild:
     - HandController
     - InfiniteModeController
     - MainMenu
-    - PlatformController
     - PlayerCombat
     - PlayerMovement
     - Projectile
     - PullSpell
+    - RegisterLoginSystem
+    - RowUI
+    - ScoreController
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -29,6 +32,7 @@ ScriptsOnlyBuild:
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -49,7 +53,11 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.Slider
   sceneClasses:
     Assets/Scenes/CanyonColossus.unity:
@@ -100,7 +108,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2340}
+    - Class: 114
+      Script: {instanceID: 2366}
+    - Class: 114
+      Script: {instanceID: 2442}
     - Class: 114
       Script: {instanceID: 2486}
     - Class: 114
@@ -124,9 +136,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4028}
     - Class: 114
-      Script: {instanceID: 4868}
+      Script: {instanceID: 4870}
     - Class: 114
-      Script: {instanceID: 4876}
+      Script: {instanceID: 28330}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -181,7 +193,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2440}
+      Script: {instanceID: 2442}
     - Class: 114
       Script: {instanceID: 2486}
     - Class: 114
@@ -195,9 +207,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2996}
     - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
       Script: {instanceID: 3564}
     - Class: 114
-      Script: {instanceID: 4868}
+      Script: {instanceID: 4028}
+    - Class: 114
+      Script: {instanceID: 4870}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -205,6 +221,63 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Leaderboard.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1518}
+    - Class: 114
+      Script: {instanceID: 1730}
+    - Class: 114
+      Script: {instanceID: 1798}
+    - Class: 114
+      Script: {instanceID: 2340}
+    - Class: 114
+      Script: {instanceID: 2486}
+    - Class: 114
+      Script: {instanceID: 2618}
+    - Class: 114
+      Script: {instanceID: 2672}
+    - Class: 114
+      Script: {instanceID: 2804}
+    - Class: 114
+      Script: {instanceID: 2996}
+    - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 4590}
+    - Class: 114
+      Script: {instanceID: 4828}
+    - Class: 114
+      Script: {instanceID: 4840}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -242,6 +315,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1518}
     - Class: 114
+      Script: {instanceID: 1592}
+    - Class: 114
+      Script: {instanceID: 1674}
+    - Class: 114
       Script: {instanceID: 1718}
     - Class: 114
       Script: {instanceID: 1798}
@@ -262,7 +339,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
+      Script: {instanceID: 3916}
+    - Class: 114
       Script: {instanceID: 4028}
+    - Class: 114
+      Script: {instanceID: 4116}
     - Class: 114
       Script: {instanceID: 4132}
     - Class: 114
@@ -270,8 +351,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4420}
     - Class: 114
-      Script: {instanceID: 4826}
+      Script: {instanceID: 4828}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -422,7 +505,7 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
-      Hash: 1d1f98ca760b1ff2caa1bb3130731ad2
+      Hash: 6b6f06085783f48fc1e399f2a011a645
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HandController
@@ -440,7 +523,7 @@ ScriptsOnlyBuild:
     className: AnalyticsTracker
   - hash:
       serializedVersion: 2
-      Hash: 0fb715c177449b86b66be2ee66a35784
+      Hash: f230366c5e4adc3e438e657ef460f372
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CanyonColossusController
@@ -494,7 +577,13 @@ ScriptsOnlyBuild:
     className: AudioManagerTest
   - hash:
       serializedVersion: 2
-      Hash: 88dfb2673fc2645fd03e689e02778adc
+      Hash: cb23efba1199ae21fe7d174079cf8622
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreController
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColossalCoreController
@@ -522,12 +611,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.Advertisements.dll
     namespaceName: UnityEngine.Advertisements.Utilities
     className: CoroutineExecutor
-  - hash:
-      serializedVersion: 2
-      Hash: d1f07c9e64b7817e6271f80bb03de25f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ColossusFightController
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -710,7 +793,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 9a1984f716d30bdcd06b3c19b9a42a7a
+      Hash: bba4e932fe624d9ee86bc627032f30b5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamemodeSelection
@@ -854,7 +937,7 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: 3cf322579248030a358db537e259d892
+      Hash: bd4c70d3e78a73960460e3023dc859e6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InfiniteModeController
@@ -950,10 +1033,10 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: f64d80c7e8ae39d46b4412c6c0d9e1f5
+      Hash: cd6cb3b98aa38aa666a976114396b5d8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HealthBarBehaviour
+    className: RegisterLoginSystem
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1022,7 +1105,7 @@ ScriptsOnlyBuild:
     className: IAPListener
   - hash:
       serializedVersion: 2
-      Hash: f84812cd450b0c376f21ea5ac031d7d9
+      Hash: 2d08da75253031f604ad51a3dce71bbb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharacterSelectController
@@ -1088,6 +1171,12 @@ ScriptsOnlyBuild:
     className: DataPrivacyButton
   - hash:
       serializedVersion: 2
+      Hash: 00ff9ca5fab99c542705d79eac00257b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RowUI
+  - hash:
+      serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1148,16 +1237,10 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: a9939a6d1322e16673120b93faef0230
+      Hash: 8c8348b4dc83d4978e1111fcd1972c1c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlatformController
   - hash:
       serializedVersion: 2
       Hash: dd7520b7d4e690e8c593273e7b9fbe80
@@ -1169,5 +1252,6 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Infinite.unity
   - Assets/Scenes/CanyonColossus.unity
+  - Assets/Scenes/Leaderboard.unity
   playerPath: C:/Users/HP/Documents/GitHub/A-ReallyPainfulGame/Progetto Finale Informatica
-    A.S. 2020-2021/Gioco/Latest/RPG-Like School Final Project.exe
+    A.S. 2020-2021/Gioco/Beta v1.0.3/ARPG - A Really Painful Game.exe
